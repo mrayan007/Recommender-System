@@ -1,10 +1,18 @@
 const div = document.querySelector("div");
+const text = document.querySelector("textarea");
+const popup = document.getElementById("popup");
+const popuptext = document.querySelector("#popup span");
 
-const API_URL = "http://localhost:8001"
+const API_URL = "http://localhost:8000";
 
 function FetchAPI() {
   fetch(API_URL)
-    .then(response => response.text())
+    .then(response => response.json())
     .then(data => div.textContent = data)
-    .catch(error => div.textContent = console.log(error))
+    .catch(error => console.log(error));
+}
+
+function Submit() {
+  popuptext.textContent = text.value;
+  popup.classList.toggle("scale-0");
 }
