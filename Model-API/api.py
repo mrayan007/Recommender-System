@@ -3,9 +3,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# models
-# from models import Item
-
 app = FastAPI()
 
 origins = ["*"]

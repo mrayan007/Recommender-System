@@ -13,6 +13,8 @@ function FetchAPI() {
 }
 
 function Submit() {
-  popuptext.textContent = text.value;
+  const response = text.value === "" ? "Please insert a student profile" : text.value;
+
+  popuptext.textContent = response;
   popup.classList.toggle("scale-0");
 }
